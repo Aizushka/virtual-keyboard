@@ -3,14 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="icon" type="image/x-icon" href="icons/icons8-enter-key-ios-16-96.png"> -->
-  <link rel="icon" type="image/x-icon" href="icons/enter-key.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="icons/enter-key.ico"> -->
+  <link rel="icon" type="image/x-icon" href="icons/keyboard_icon.ico">
   <title>Virtual Keyboard</title>
-  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
-  <script src="script.js"></script>
+  <h1>VIRTUAL KEYBOARD</h1>
+  <main>
+
+    <label for="checkbox" class="switch">
+      <input class="switch__input" type="checkbox" id="checkbox">
+      
+      <div class="switch__slider">
+        
+        <div class="switch__sun">
+          <svg width="10" height="10" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 79.5">
+            <defs>
+              <style>
+                .cls-1, .cls-2 {
+                  fill: #333;
+                }
+                .cls-2 {
+                  stroke: #333;
+                  stroke-linecap: round;
+                  stroke-miterlimit: 10;
+                  stroke-width: 7px;
+                }
+              </style>
+            </defs>
+            <g id="Layer_1-2" data-name="Layer 1">
+              <g>
+                <circle class="cls-1" cx="40" cy="39.5" r="19"/>
+                <g>
+                  <line class="cls-2" x1="40" y1="13.5" x2="40" y2="3.5"/>
+                  <line class="cls-2" x1="40.5" y1="76" x2="40.5" y2="66"/>
+                  <line class="cls-2" x1="76.5" y1="39" x2="66.5" y2="39"/>
+                  <line class="cls-2" x1="13.5" y1="39" x2="3.5" y2="39"/>
+                </g>
+                <g>
+                  <line class="cls-2" x1="22.18" y1="20.09" x2="15.43" y2="12.7"/>
+                  <line class="cls-2" x1="64.71" y1="65.89" x2="57.96" y2="58.5"/>
+                  <line class="cls-2" x1="66.32" y1="14.29" x2="58.94" y2="21.03"/>
+                  <line class="cls-2" x1="19.81" y1="56.79" x2="12.43" y2="63.53"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        
+        <div class="switch__moon">
+          <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79 79">
+            <g id="Layer_1-2" data-name="Layer 1">
+              <path class="cls-1" d="M63.68,56.31c-22.64,0-40.99-18.35-40.99-40.99,0-5.42,1.06-10.59,2.97-15.32C10.62,6.07,0,20.8,0,38.01c0,22.64,18.35,40.99,40.99,40.99,17.22,0,31.94-10.62,38.01-25.66-4.74,1.91-9.9,2.97-15.32,2.97Z" style="fill: #fff;"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </label>
+
+    <label for="textarea" class="inputField">
+      <textarea focus placeholder="Start to tap" rows="6" id="textarea"></textarea>
+    </label>
+
+    <div class="board"></div>
+
+    <p>Comment from author </p>
+  </main>
+  <script  type="module" src="script.js"></script>
 </body>
 </html>
