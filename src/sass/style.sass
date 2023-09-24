@@ -1,0 +1,234 @@
+@import "variables"
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: "Open Sans", sans-serif
+
+html
+  background: url($bg-image-path) no-repeat
+  background-size: 100vw 100vh
+  color: $text-color
+
+html.dark
+  background: url($bg-image-dark-path) no-repeat
+  background-size: 100vw 100vh
+  color: $text-color-dark
+
+h1
+  text-align: center
+  margin-top: 50px
+  margin-bottom: 50px
+
+main
+  min-width: 500px
+  max-width: 1500px
+  width: 80vw
+  margin: 0 auto
+  position: relative
+
+.board
+  width: 100%
+  // min-width: 1000px
+  padding: 15px 25px
+  margin: 0 auto
+  border-radius: 10px
+  background-color: $board-bg
+
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: flex-start
+  gap: $gap
+
+  &.dark
+    background-color: $board-bg-dark
+
+.key
+  width: calc(( 100% - (14*$gap))/15)
+  min-height: 40px
+
+  font-size: min(max(10px, 1.4vw), 20px)
+  overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: center
+  // transition: 0.3s
+
+  background-color: $key-bg
+  border-radius: 5px
+  &:hover
+    transition: 0s
+    border: 2px solid $key-active
+    color: $key-active
+  &:active
+    color: $key-color
+    background-color: $key-active
+
+  &.dark
+    background-color: $key-bg-dark
+    color: $key-color-dark
+    &:hover
+      border: 2px solid $key-active-dark
+      color: $key-active-dark
+    &:active
+      color: $key-color-dark
+      background-color: $key-active-dark
+
+  &.enable
+    background-color: $key-active
+    &:hover
+      color: $light
+    &.dark
+      background-color: $key-active-dark
+      &:hover
+        color: $key-bg-dark
+
+.arrows
+  color: transparent
+  font-size: 0
+  &.dark
+    coolor: transparent
+    font-size: 0
+.arrow-left
+    background: $key-bg url("/src/icons/arrow_back.svg") no-repeat center
+    &.dark
+      background-image: url("/src/icons/arrow_back_l.svg")
+
+.arrow-down
+  background: $key-bg url("/src/icons/arrow_down.svg") no-repeat center
+  &.dark
+    background-image: url("/src/icons/arrow_down_l.svg")
+
+.arrow-right
+  background: $key-bg url("/src/icons/arrow_forward.svg") no-repeat center
+  &.dark
+    background-image: url("/src/icons/arrow_forward_l.svg")
+
+.arrow-up
+  background: $key-bg url("/src/icons/arrow_upward.svg") no-repeat center
+  &.dark
+    background-image: url("/src/icons/arrow_upward_l.svg")
+
+
+.tilda
+  width: calc((( 100% - (13*$gap))/15) * 1.2)
+
+.backspace
+  width: calc((( 100% - (13*$gap))/15) * 1.8)
+
+.tab
+  width: calc((( 100% - (20*$gap))/15) * 1)
+
+.del
+  width: calc((( 100% - (20*$gap))/15) * 1)
+
+.capsLock
+  width: calc((( 100% - (12*$gap))/15) * 1.8)
+
+.enter
+  width: calc((( 100% - (10*$gap))/15) * 2.2)
+
+.shift
+  width: calc((( 100% - (10*$gap))/15) * 2)
+
+.lang
+  width: calc((( 100% - (6*$gap))/15) * 1)
+
+.space
+  width: calc((( 100% - (6*$gap))/15) * 9.2)
+
+.no-key
+  width: calc((( 100% - (6*$gap))/15) * 0.9)
+  color: transparent
+  background-color: transparent
+  pointer-events: none
+  &.dark
+      color: transparent
+      background-color: transparent
+
+// Mode Switch
+
+.switch
+  display: inline-block
+  position: absolute
+  top: 0
+  left: -30px
+  width: 20px
+  height: 45px
+  border-radius: 10px
+  &__input
+    width: 0
+    height: 0
+    opacity: 0
+  &__slider
+    cursor: pointer
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border-radius: 10px
+    transition: 0.3s
+    border: 1px solid $text-color
+  &__slider::before
+    content: ''
+    cursor: pointer
+    position: absolute
+    z-index: 1000
+    width: 14px
+    height: 14px
+    border-radius: 100%
+    background: $light
+    top: 4px
+    left: 2px
+    transition: 0.3s
+  &__sun
+    position: absolute
+    top: 0
+    left: 4px
+  &__moon
+    position: absolute
+    bottom: 0
+    left: 4px
+  &__input:focus + .switch__slider
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+  &__input:checked + .switch__slider
+    border: 1px solid $text-color-dark
+    background-color: $light
+  &__input:checked + .switch__slider:before
+    background-color: $text-color
+    transform: translateY(22px)
+
+//
+
+.inputField
+  width: 100%
+  margin: 0 auto
+  margin-bottom: 20px
+  padding: 20px 30px
+  background-color: $board-bg
+  border-radius: 10px
+  display: flex
+  justify-content: center
+  align-items: top
+  &.dark
+    background-color: $board-bg-dark
+
+textarea
+  display: block
+  margin: 0 auto
+  width: 100%
+  resize: none
+  padding: 10px
+  border: none
+  border-radius: 10px
+  background-color: transparent
+  caret-color: $key-active
+  &.dark
+    color: $text-color-dark
+    caret-color: $light
+  &:focus
+    box-shadow: none
+    outline: none
