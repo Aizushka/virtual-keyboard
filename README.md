@@ -7,3 +7,4 @@ Technology stack:
   CSS/SASS
   JS
   ESLint Airbnb config
+
