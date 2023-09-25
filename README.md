@@ -6,7 +6,7 @@
 This is a classic virtual keyboard with a beautiful design. It was developed for the purpose of learning and practicing native JavaScript coding and acquainting myself with ESLint (ESLint Airbnb config was utilized).
 
 #### Technology stack:  
-<img src="src/icons/readme/html-5.png" width="50" height="70" alt="HTML"> <img src="src/icons/readme/css.png" width="50" height="70" alt="CSS"> <img src="src/icons/readme/sass.png" width="50" height="70" alt="SASS"> <img src="src/icons/readme/js.png" width="50" height="70" alt="JS"> <img src="src/icons/readme/eslint-icon.svg" width="50" height="70" alt="ESLint">
+<img src="src/icons/readme/html-5.png" width="50" height="50" alt="HTML"> <img src="src/icons/readme/css.png" width="50" height="50" alt="CSS"> <img src="src/icons/readme/sass.png" width="50" height="50" alt="SASS"> <img src="src/icons/readme/js.png" width="50" height="50" alt="JS"> <img src="src/icons/readme/eslint-icon.svg" width="50" height="50" alt="ESLint">
 
 ## Features
 * Switch between two color schemes using the dedicated switch located beside the input field
