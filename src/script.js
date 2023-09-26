@@ -200,8 +200,10 @@ function printSymbol(item) {
   switch (item.value) {
     case 'En/Ru':
       keyboard.toggleLang();
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'Shift':
       keyboard.toggleShift();
@@ -214,26 +216,34 @@ function printSymbol(item) {
     case 'Tab':
       input.value = `${input.value.slice(0, input.selectionStart)}    ${input.value.slice(input.selectionEnd)}`;
       keyboard.updateCaretPosition(4, true);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'Del':
       input.value = `${input.value.slice(0, input.selectionEnd)}${input.value.slice(input.selectionEnd + 1)}`;
       keyboard.updateCaretPosition(0, true);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'Backspace':
       input.value = `${input.value.slice(0, input.selectionStart - 1)}${input.value.slice(input.selectionEnd)}`;
       keyboard.updateCaretPosition(1, false);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'Enter':
       input.value = `${input.value.slice(0, input.selectionStart)}\n${input.value.slice(input.selectionEnd)}`;
       keyboard.updateCaretPosition(1, true);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'up':
       subStr = input.value.substring(0, input.selectionStart);
@@ -244,8 +254,10 @@ function printSymbol(item) {
       } else {
         keyboard.updateCaretPosition(penult.length - prev.length + 1, false);
       }
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'down':
       subStr = input.value.substring(input.value.lastIndexOf('\n', keyboard.start), input.value.indexOf('\n', keyboard.start));
@@ -260,24 +272,32 @@ function printSymbol(item) {
       }
       input.selectionStart = keyboard.start;
       input.selectionEnd = keyboard.end;
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'left':
       keyboard.updateCaretPosition(1, false);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     case 'right':
       keyboard.updateCaretPosition(1, true);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
     default:
       input.value = `${input.value.slice(0, input.selectionStart)}${item.value}${input.value.slice(input.selectionEnd)}`;
       keyboard.updateCaretPosition(1, true);
-      keyboard.disableShift();
-      drawAllKeys();
+      if (keyboard.isShift) {
+        keyboard.disableShift();
+        drawAllKeys();
+      }
       break;
   }
   input.focus();
