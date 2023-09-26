@@ -183,6 +183,11 @@ function drawAllKeys() {
   if (keyboard.isCaps) {
     document.querySelector('.capsLock').classList.add('enable');
   }
+  if (keyboard.isShift) {
+    document.querySelectorAll('.shift').forEach((shift) => shift.classList.add('enable'));
+  } else if (!keyboard.isShift) {
+    document.querySelectorAll('.shift').forEach((shift) => shift.classList.remove('enable'));
+  }
 }
 drawAllKeys();
 
