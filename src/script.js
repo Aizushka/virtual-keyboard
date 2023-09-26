@@ -8,6 +8,8 @@ const checkbox = document.querySelector('.switch__input');
 const inputContainer = document.querySelector('.inputField');
 const input = document.querySelector('textarea');
 const board = document.querySelector('.board');
+const sign = document.querySelector('.sign');
+const link = document.querySelector('.sign_link');
 
 // Color theme
 
@@ -22,6 +24,8 @@ function setColorTheme() {
     allKeys.forEach((key) => {
       key.classList.remove('dark');
     });
+    sign.classList.remove('dark');
+    link.classList.remove('dark');
   } else {
     root.classList.add('dark');
     inputContainer.classList.add('dark');
@@ -30,6 +34,8 @@ function setColorTheme() {
     allKeys.forEach((key) => {
       key.classList.add('dark');
     });
+    sign.classList.add('dark');
+    link.classList.add('dark');
   }
 }
 

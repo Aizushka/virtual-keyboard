@@ -54,7 +54,7 @@ main
   display: flex
   justify-content: center
   align-items: center
-  // transition: 0.3s
+  cursor: default
 
   background-color: $key-bg
   border-radius: 5px
@@ -173,7 +173,7 @@ main
     transition: 0.3s
     border: 1px solid $text-color
   &__slider::before
-    content: ''
+    content: ""
     cursor: pointer
     position: absolute
     z-index: 1000
@@ -232,3 +232,13 @@ textarea
   &:focus
     box-shadow: none
     outline: none
+
+
+.sign
+  opacity: 0.4
+  &.dark
+    opacity: 0.25
+  &_link
+    color: $text-color
+    &.dark
+      color: $text-color-dark

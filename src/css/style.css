@@ -71,6 +71,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: default;
   background-color: #fff;
   border-radius: 5px;
 }
@@ -297,4 +298,17 @@ textarea:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
+}
+
+.sign {
+  opacity: 0.4;
+}
+.sign.dark {
+  opacity: 0.25;
+}
+.sign_link {
+  color: #333333;
+}
+.sign_link.dark {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
