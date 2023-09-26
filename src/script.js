@@ -202,8 +202,8 @@ function printSymbol(item) {
       keyboard.toggleLang();
       if (keyboard.isShift) {
         keyboard.disableShift();
-        drawAllKeys();
       }
+      drawAllKeys();
       break;
     case 'Shift':
       keyboard.toggleShift();
