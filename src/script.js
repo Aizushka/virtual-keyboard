@@ -230,7 +230,9 @@ function printSymbol(item) {
       }
       break;
     case 'Backspace':
-      input.value = `${input.value.slice(0, input.selectionStart - 1)}${input.value.slice(input.selectionEnd)}`;
+      if (input.selectionStart > 0) {
+        input.value = `${input.value.slice(0, input.selectionStart - 1)}${input.value.slice(input.selectionEnd)}`;
+      }
       keyboard.updateCaretPosition(1, false);
       if (keyboard.isShift) {
         keyboard.disableShift();
