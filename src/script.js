@@ -261,13 +261,15 @@ function printSymbol(item) {
         drawAllKeys();
       }
       break;
+
     case 'down':
       subStr = input.value.substring(input.value.lastIndexOf('\n', keyboard.start), input.value.indexOf('\n', keyboard.start));
       next = input.value.indexOf('\n', keyboard.start + 1) !== -1 ? input.value.indexOf('\n', keyboard.start + 1) : input.value.length;
-
       if (keyboard.start < input.value.indexOf('\n')) {
-        if ((input.selectionStart + subStr.length + 1) < input.value.length) {
-          keyboard.updateCaretPosition(subStr.length + 1);
+        keyboard.updateCaretPosition(subStr.length + 1);
+      } else if (input.value[keyboard.start] !== '\n' && keyboard.start > input.value.indexOf('\n')) {
+        if ((input.selectionStart + subStr.length + 1) <= input.value.length) {
+          keyboard.updateCaretPosition(subStr.length);
         } else {
           keyboard.start = input.value.length;
           keyboard.end = input.value.length;
@@ -283,6 +285,7 @@ function printSymbol(item) {
         drawAllKeys();
       }
       break;
+
     case 'left':
       keyboard.updateCaretPosition(1, false);
       if (keyboard.isShift) {
